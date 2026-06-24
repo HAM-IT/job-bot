@@ -15,9 +15,8 @@ def main():
         search_term="PMO OR Operations OR Supply Chain",
         location="Morocco",
         results_wanted=10, 
-        hours_old=72, # Allargato a 3 giorni per essere sicuri di pescare qualcosa
-        country_indeed="Morocco"
-        """"(Nota pro: Se nei prossimi giorni vorrai cercare solo lavori da remoto in tutto il mondo, ti basterà cambiare location="Remote" e togliere la riga di country_indeed)."""
+        hours_old=72,
+        country_indeed="morocco"
     )
     
     if jobs.empty:
