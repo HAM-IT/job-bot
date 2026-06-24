@@ -9,14 +9,15 @@ WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 def main():
     print("🔍 Avvio ricerca lavori...")
     
-    # 1. Scraper (puoi personalizzare i parametri)
+   # 1. Scraper (Filtri aggiornati per Operations/PMO)
     jobs = scrape_jobs(
         site_name=["indeed", "google"],
-        search_term="PMO Analyst",
-        location="Milan, Italy",
-        results_wanted=5, # Tienilo basso all'inizio per non sovraccaricare Google Apps Script
-        hours_old=24,
-        country_indeed="Italy"
+        search_term="PMO OR Operations OR Supply Chain",
+        location="Morocco",
+        results_wanted=10, 
+        hours_old=72, # Allargato a 3 giorni per essere sicuri di pescare qualcosa
+        country_indeed="Morocco"
+        """"(Nota pro: Se nei prossimi giorni vorrai cercare solo lavori da remoto in tutto il mondo, ti basterà cambiare location="Remote" e togliere la riga di country_indeed)."""
     )
     
     if jobs.empty:
