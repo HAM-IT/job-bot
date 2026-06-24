@@ -1,4 +1,14 @@
-steps:
+name: Job Bot Daily Run
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+    steps:
       - name: Check out del codice
         uses: actions/checkout@v4
 
