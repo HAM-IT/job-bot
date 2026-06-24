@@ -11,7 +11,7 @@ def main():
     
    # 1. Scraper (Filtri aggiornati per Operations/PMO)
     jobs = scrape_jobs(
-        site_name=["indeed", "google", "linkedin"], # <-- Aggiunto qui
+        site_name=["indeed", "google"], # PS: avoid adding linkedin, sh*ts too safe. use apify to scrap job offers from there.
         search_term="PMO OR Operations OR Supply Chain",
         location="Morocco",
         results_wanted=10, 
